@@ -6,39 +6,33 @@ int bouncingBall(double, double, double);
 int main (void)
 {
 
-    int timesBallViewed = bouncingBall(5.0, 0.66, 1.5);
+    int timesBallViewed = bouncingBall(3.0, 0.66, 1.5);
 
     printf("The ball was viewed %i times!\n", timesBallViewed);
-
 
 }
 
 int bouncingBall(double h, double bounce, double window)
 {
-
+    //return 1 if constraints not met
     if(h <= 0 || (bounce <= 0 || bounce >= 1) || window >= h)
     {
-        printf("Constraints NOT met\n");
+
         return -1;
     }
     else
     {
-        //printf("Constraints met\n");
-
         int ballViewCount = 1;
-        int newHeight = 0;
-        //everytime ball bounces it bounces up two thirds of it's last height
+        float newHeight = 0;
 
         //gives height of ball after first drop
-        newHeight = h*2/3;
+        newHeight = h * bounce;
         while(newHeight > window)
         {
-            newHeight = newHeight*2/3;
-            ballViewCount = ballViewCount +2;
-        }
-        printf("%i\n", newHeight);
-        //printf("Ball Viewed %i\n", ballViewCount);
+            ballViewCount = ballViewCount + 2;
+            newHeight = newHeight * bounce;
 
+        }
 
         return ballViewCount;
 
