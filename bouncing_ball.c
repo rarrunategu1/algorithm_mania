@@ -18,7 +18,7 @@ int bouncingBall(double h, double bounce, double window)
 
     if(h <= 0 || (bounce <= 0 || bounce >= 1) || window >= h)
     {
-        //printf("Constraints NOT met\n");
+        printf("Constraints NOT met\n");
         return -1;
     }
     else
@@ -29,6 +29,7 @@ int bouncingBall(double h, double bounce, double window)
         int newHeight = 0;
         //everytime ball bounces it bounces up two thirds of it's last height
 
+        //gives height of ball after first drop
         newHeight = h*2/3;
         do
         {
