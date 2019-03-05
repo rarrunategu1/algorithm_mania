@@ -6,7 +6,7 @@ int bouncingBall(double, double, double);
 int main (void)
 {
 
-    int timesBallViewed = bouncingBall(3.0, 0.66, 1.5);
+    int timesBallViewed = bouncingBall(5.0, 0.66, 1.5);
 
     printf("The ball was viewed %i times!\n", timesBallViewed);
 
@@ -31,14 +31,12 @@ int bouncingBall(double h, double bounce, double window)
 
         //gives height of ball after first drop
         newHeight = h*2/3;
-        do
+        while(newHeight > window)
         {
             newHeight = newHeight*2/3;
             ballViewCount = ballViewCount +2;
-
         }
-        while(newHeight > window);
-        //printf("%i\n", newHeight);
+        printf("%i\n", newHeight);
         //printf("Ball Viewed %i\n", ballViewCount);
 
 
